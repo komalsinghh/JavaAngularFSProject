@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <ng-container>
+            <div class="col-sm-6">
+                <mat-card class="ex-card">
+                    <img mat-card-image [src]="'data:image/jpeg;base64,'+data.productImage" alt="Photo of a Product"
+                        class="img-fit">
+                </mat-card>
+            </div>
+            <div class="col-sm-6">
+                <h2 class="text-center">{{data.productBrand}}</h2>
+                <h1><b>{{data.productName}}</b></h1>
+                <h2>Price: &#8377;{{data.productPrice}}</h2>
+                <p><b>Description: </b>{{data.productDescription}}</p>
+             
+                <mat-form-field class="example-form-field">
+                   <mat-label><mat-icon>
+                            <span class="material-symbols-outlined">
+                                location_on
+                            </span>
+                        </mat-icon> Enter Delivery Pincode</mat-label>
+                    <input matInput type="text" [(ngModel)]="value" name="pincode">
+                    <button *ngIf="!value" [(ngModel)]="value" matSuffix mat-icon-button (click)="value=''">
+                    </button>
+                </mat-form-field>
+             <button mat-raised-button color="warn" class="btn" (click)="checkPincode()">Check</button>
+             <ng-container *ngIf="value!=''">
+            <div class="message" *ngIf="msg=='Yes'">
+             <h3 style="color: green;">{{fullmsg}}</h3> 
+            </div>
+            <div class="message" *ngIf="msg=='No'">
+                <h3 style="color: red;">{{fullmsg}}</h3> 
+               </div>
+            </ng-container>
+            </div>
+        </ng-container>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<mat-toolbar color="accent">
+  <a [routerLink]="'/home'" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>storefront</mat-icon>
+  </a>
+  <span>Shopee Store</span>
+  <span class="example-spacer"></span>
+  <ng-container *ngIf="menu==='default'">
+    <a [routerLink]="'/home'" mat-icon-button class="user mr150" >Welcome {{userName|titlecase}}</a>
+  <button (click)="logout()" mat-icon-button class="mr60"><mat-icon>
+    logout
+  </mat-icon>
+    Logout
+  </button>
+</ng-container>
+<ng-container *ngIf="menu==='out'">
+  <a [routerLink]="'/'" mat-icon-button class="mr40">Login</a>
+  <a [routerLink]="'/register'" mat-icon-button class="mr50">Register</a>
+</ng-container>
+</mat-toolbar>

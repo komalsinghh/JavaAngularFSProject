@@ -1,0 +1,27 @@
+<div class="wrapper">
+<div class="container">
+<form #loginform="ngForm" (ngSubmit)="loginUser()">
+    <h2 style="text-align: center;">Login</h2>
+    <small class="text-danger">{{msg}}</small>
+    <div class="mb-3 form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]="user.email" required pattern="^\w+@[a-zA-z]+?\.[a-zA-z]{2,3}$" 
+      #email="ngModel"
+      [class.is-invalid]="email.invalid && email.touched">
+      
+      <div *ngIf="email.errors && (email.invalid && email.touched)">
+      <small class="text-danger" *ngIf="email.errors?.['required']">Email Id is mandatory</small>
+      <small class="text-danger"*ngIf="email.errors?.['pattern']">Enter Valid Email</small>
+      </div>
+  </div>
+    <div class="mb-3 form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" placeholder="Enter Password" name="password" [(ngModel)]="user.password" required #password="ngModel"
+      [class.is-invalid]="password.invalid && password.touched">
+      <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is mandatory</small>
+    </div>
+    <button type="submit" mat-raised-button color="primary">Login</button>
+  </form><br/>
+  <a [routerLink]="['/registration']" style="margin-left: 80%;">New User? Register here</a>
+ </div>
+ </div>

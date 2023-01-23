@@ -1,0 +1,26 @@
+h1{
+    font-family: 'Perpetua';
+}
+.full-width{
+    width: 60%;
+}
+.example-card{
+    max-width: 900px;
+}
+.img-fit{
+    width: 200px;
+    height:200px;
+    margin-bottom: 10px;
+    transition: 0.3s ease-in-out;
+    margin-left: 30px;
+}
+.img-fit:hover{
+    transition: 0.3s ease-in-out;
+    transform:scale(1.1);
+}
+.name-design{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100ch;
+  }

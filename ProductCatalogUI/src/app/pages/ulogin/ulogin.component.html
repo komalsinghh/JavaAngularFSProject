@@ -1,0 +1,36 @@
+<div class="bootstrap-wrapper">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                <div class="container text-center mt20">
+                    <img src="../../../assets/login.jpg" alt="" style="height: 75px;" />
+                </div>
+                <h1 class="text-center">Login</h1>
+                <form (ngSubmit)="formSubmit()">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Email</mat-label>
+                        <input 
+                        [(ngModel)]="loginData.userEmail" name="userEmail"
+                        type="email" name="userEmail" matInput
+                            placeholder="Enter Email" required>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="full-width"> 
+                        <mat-label>Password</mat-label>
+                        <input 
+                        [(ngModel)]="loginData.userPassword" name="userPassword"
+                        type="password" name="userPassword" matInput
+                            placeholder="Enter Password" required>
+                    </mat-form-field>
+                    <div class="container">
+                        <small>By continuing, you agree to Shopee's Terms of Use and Privacy Policy.</small><br />
+                        <button mat-raised-button color="primary" type="submit">Login</button>
+                        <button mat-raised-button color="basic" type="reset" class="ml40">Reset</button>
+                    </div>
+                </form>
+                <a [routerLink]="['/register']" style="margin-left: 50%;">New User? Register here</a>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

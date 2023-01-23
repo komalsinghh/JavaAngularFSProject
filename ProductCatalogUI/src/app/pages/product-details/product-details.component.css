@@ -1,0 +1,21 @@
+.img-fit{
+    width: auto;
+    height:auto;
+    transition: 0.3s ease-in-out;
+    margin-top: 10px;
+    display:inline-block;
+}
+.img-fit:hover{
+    transition: 0.3s ease-in-out;
+    transform:scale(1.1);
+}
+.btn{
+   margin-left: 20px;
+}
+.ex-card{
+    display: flex;
+}
+.message{
+    font-family: 'Georgia';
+    font-weight: 800;
+}

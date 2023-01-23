@@ -1,0 +1,42 @@
+<div class="bootstrap-wrapper">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                <div class="container text-center mt20" >
+                    <img src="../../../assets/logo.png" alt="" style="height: 75px;" />
+                </div>
+                <h1 class="text-center">Register with your email and password:</h1>
+                <form (ngSubmit)="formSubmit()">
+                    <mat-form-field appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input required [(ngModel)]="user.userFirstName" name="userFirstName" matInput
+                            placeholder="Enter First Name" >
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline" style="margin-left: 10px;">
+                        <mat-label>Last Name</mat-label>
+                        <input required [(ngModel)]="user.userLastName" name="userLastName" matInput
+                            placeholder="Enter Last Name" >
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline" style="width: 80%;">
+                        <mat-label>Email</mat-label>
+                        <input required [(ngModel)]="user.userEmail" name="userEmail" type="email" matInput
+                            placeholder="Enter Email" >
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input required [(ngModel)]="user.userPassword" name="userPassword" type="password" matInput
+                            placeholder="Enter Password" >
+                    </mat-form-field>
+                    <div class="container">
+                        <small>By continuing, you agree to Shopee's Terms of Use and Privacy Policy.</small><br />
+                        <button mat-raised-button color="primary" type="submit">Register</button>
+                        <button mat-raised-button color="basic" type="reset" class="ml40">Reset</button>
+                    </div>
+                </form>
+                <a [routerLink]="['/']" style="margin-left: 50%;">Have an account already? Login here</a>
+            </mat-card>
+            </div>
+         </div>
+    </div>
+</div>

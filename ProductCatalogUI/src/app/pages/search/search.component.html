@@ -1,0 +1,71 @@
+<div class="bootstrap-wrapper">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                    <div class="container text-center mt20">
+                        <img src="../../../assets/search.png" alt="" style="height: 100px;" />
+                    </div>
+                    <h1 class="text-center"><b><u>Search Products</u></b></h1>
+                    <form (submit)="formSearch()">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>By Name</mat-label>
+                            <input [(ngModel)]="searchData.productName" name="productName" type="text" matInput
+                                placeholder="Search">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>By Brand</mat-label>
+                            <input [(ngModel)]="searchData.productBrand" name="productBrand" type="text" matInput
+                                placeholder="Search">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>By Product Code</mat-label>
+                            <input [(ngModel)]="searchData.productCode" name="productCode" type="number" matInput
+                                placeholder="Search">
+                        </mat-form-field>
+                        <div class="container">
+                            <button mat-raised-button color="warn" type="submit">Search</button>
+                            <button mat-raised-button color="basic" type="reset" class="ml40">Reset</button>
+                        </div>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <button type="button" class="btn btn-dark mt20" (click)="onSortDirection()">
+        <mat-icon>
+            <span class="material-symbols-outlined">
+                filter_list
+            </span>
+        </mat-icon>High to Low
+    </button>
+    <button type="button" class="btn btn-dark ml20" (click)="onSortDirectionOpp()">
+        <mat-icon>
+            <span class="material-symbols-outlined">
+                sort
+            </span>
+        </mat-icon>Low to High
+    </button>
+    <div class="row gy-3 my-3">
+        <ng-container *ngFor="let d of data">
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title>{{d.productBrand}}</mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image [src]="'data:image/jpeg;base64,'+d.productImage" alt="Photo of a Product"
+                        class="img-fit">
+                    <mat-card-content>
+                        <p class="name-design"><strong>{{d.productName}}</strong></p>
+                        <p><strong>Price: </strong>&#8377;{{d.productPrice}}</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button color="primary" (click)="getDetails(d.productCode)" class="mb50">View Product Details</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </ng-container>
+    </div>
+</div>

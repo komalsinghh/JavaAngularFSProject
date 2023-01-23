@@ -1,0 +1,28 @@
+<div class="container">
+  <a [routerLink]="'/search'" class="animated-button1 pos">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+   Search Products
+  </a> <div class="row gy-3 my-3">
+        <ng-container *ngFor="let d of data">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>{{d.productBrand}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image [src]="'data:image/jpeg;base64,'+d.productImage" alt="Photo of a Product" class="img-fit">
+                <mat-card-content>
+                  <p class="name-design"><strong>{{d.productName}}</strong></p>
+                  <p><strong>Price: </strong>&#8377;{{d.productPrice}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button color="primary" (click)="getDetails(d.productCode)">View Product Details</button>
+                </mat-card-actions>
+              </mat-card>
+              
+        </div>  
+    </ng-container>
+    </div>
+</div>
